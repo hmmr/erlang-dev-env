@@ -1,6 +1,6 @@
 FROM erlang:22
 
-RUN apt-get update && apt-get -y install make screen sudo gcc g++ emacs bash-completion
+RUN apt-get update && apt-get -y install make screen sudo gcc g++ emacs-nox bash-completion less
 
 RUN useradd -m dev
 
@@ -19,4 +19,4 @@ ADD bash_profile .bash_profile
 ADD bashrc .bashrc
 ADD git_bash_prompt .git_bash_prompt
 
-CMD while true; do screen -Rd dev -s /bin/bash >/dev/tty 2>/dev/tty </dev/tty; echo -e \"\n\n\n\nC-c to exit, or wait 5 sec to return\"; sleep 5 || exit; done
+CMD while true; do screen -Rd dev -s /bin/bash >/dev/tty 2>/dev/tty </dev/tty; echo "C-c to exit, or wait 5 sec to start a new screen session"; sleep 5 || exit; done

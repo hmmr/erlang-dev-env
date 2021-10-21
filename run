@@ -1,0 +1,13 @@
+#!/bin/bash
+
+home=~
+SRC=${QDEE_SRC:-$home}   # path to the dir with your riaks
+DST=${QDEE_DST:-"/home/dev"}
+
+docker run \
+    --name qdee \
+    --hostname qdee \
+    --mount type=bind,src=$SRC,dst=$DST \
+    --user dev --rm -it \
+    --env QDEE_DST=$DST \
+    qdee
