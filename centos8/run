@@ -1,0 +1,15 @@
+#!/bin/bash
+
+home=~
+SRC=${QDEE_SRC:-$home}   # path to the dir with your riaks
+DST=${QDEE_DST:-"/home/dev"}
+
+name=qdee-centos8
+
+docker run \
+    --name $name \
+    --hostname $name \
+    --mount type=bind,src=$SRC,dst=$DST \
+    --user dev --rm -it \
+    --env QDEE_DST=$DST \
+    $name

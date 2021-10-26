@@ -1,6 +1,6 @@
 FROM erlang:22
 
-RUN apt-get update && apt-get -y install make screen sudo gcc g++ emacs-nox bash-completion less
+RUN apt-get update && apt-get -y install make screen sudo gcc g++ emacs-nox bash-completion less devscripts build-essential
 
 RUN useradd -m dev
 

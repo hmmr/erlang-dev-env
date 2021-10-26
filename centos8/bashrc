@@ -27,4 +27,5 @@ echo "This is your Debian-based Erlang dev environment
 
 * Your bash history will be preserved in $HISTFILE,
   but ANY FILES OUTSIDE THE BIND-MOUNTED DIR are not, and WILL BE LOST
-  once the container is stopped.  "
+  once the container is stopped.
+"

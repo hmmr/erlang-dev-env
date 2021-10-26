@@ -4,10 +4,12 @@ home=~
 SRC=${QDEE_SRC:-$home}   # path to the dir with your riaks
 DST=${QDEE_DST:-"/home/dev"}
 
+name=qdee-erlang22
+
 docker run \
-    --name qdee \
-    --hostname qdee \
+    --name $name \
+    --hostname $name \
     --mount type=bind,src=$SRC,dst=$DST \
     --user dev --rm -it \
     --env QDEE_DST=$DST \
-    qdee
+    $name
